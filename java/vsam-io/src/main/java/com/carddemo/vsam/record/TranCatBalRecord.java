@@ -71,6 +71,35 @@ public final class TranCatBalRecord {
         return new TranCatBalRecord(accountId, typeCode, catCode, balance, copy);
     }
 
+    /**
+     * Encode this record back to 50 raw bytes for WRITE/REWRITE to TCATBAL file.
+     */
+    public byte[] encode() {
+        byte[] out = new byte[RECORD_LENGTH];
+
+        ZonedDecimalCodec.encode(out, 0, 11, false, accountId);
+        TextCodec.encode(out, 11, 2, typeCode);
+        ZonedDecimalCodec.encode(out, 13, 4, false, catCode);
+        ZonedDecimalCodec.encode(out, 17, 11, true, balance.toPlainString());
+
+        // FILLER at offset 28 already zero-filled
+
+        return out;
+    }
+
+    /**
+     * Create a new TranCatBalRecord with added amount (for accumulation during posting).
+     */
+    public TranCatBalRecord withAddedAmount(BigDecimal delta) {
+        return new TranCatBalRecord(
+            this.accountId,
+            this.typeCode,
+            this.catCode,
+            this.balance.add(delta),
+            null
+        );
+    }
+
     @Override
     public String toString() {
         return "TranCatBalRecord{" +
