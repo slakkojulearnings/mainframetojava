@@ -19,6 +19,7 @@
         <module>cobol-codec</module>
         <module>vsam-io</module>
         <module>batch-programs</module>
+        <module>online-programs</module>
         <module>verification</module>
     </modules>
 
