@@ -1,0 +1,88 @@
+================================================================================
+PROGRAM CATALOG - CardDemo COBOL Application
+================================================================================
+Format: PROGRAM_NAME | HUMAN_READABLE_NAME | PURPOSE | TYPE
+================================================================================
+
+BATCH PROGRAMS (9 programs)
+================================================================================
+CBACT01C | Account Reader | Reads account file and writes to multiple report files | BATCH
+CBACT02C | Card Data Reader | Reads and prints card data file | BATCH
+CBACT03C | Account Cross-Reference Reader | Reads and prints account cross-reference data | BATCH
+CBACT04C | Interest Calculator Batch | Calculates interest on accounts with category balances | BATCH
+CBCUS01C | Customer File Reader | Reads customer file for batch processing | BATCH
+CBTRN01C | Transaction Poster | Posts daily transaction records to accounts | BATCH
+CBTRN02C | Transaction Rejector | Posts transactions and handles rejections | BATCH
+CBTRN03C | Transaction Detail Reporter | Prints transaction detail report | BATCH
+COBSWAIT | Batch Wait Utility | Provides wait functionality for batch jobs | BATCH
+
+CICS ONLINE PROGRAMS - ACCOUNT OPERATIONS (4 programs)
+================================================================================
+COACTUPC | Account Update Online | CICS program for updating account records | CICS
+COACTVWC | Account View Online | CICS program for viewing account details | CICS
+COACTUP | Account Update BMS Screen | BMS map for account update | SCREEN
+COACTVW | Account View BMS Screen | BMS map for account details display | SCREEN
+
+CICS ONLINE PROGRAMS - MENU SYSTEMS (4 programs)
+================================================================================
+COADM01C | Admin Menu | CICS admin menu program, routes to administrative functions | CICS
+COMEN01C | User Main Menu | CICS main menu for regular users | CICS
+COSGN00C | Signon Screen | CICS signon program, routes to admin or user menu | CICS
+COBIL00C | Bill Payment Online | CICS bill payment processing program | CICS
+
+CICS ONLINE PROGRAMS - CREDIT CARD OPERATIONS (5 programs)
+================================================================================
+COCRDLIC | Card List Online | CICS program for listing credit cards with pagination | CICS
+COCRDSLC | Card Select Online | CICS program for selecting card details | CICS
+COCRDUPC | Card Update Online | CICS program for updating credit card records | CICS
+COCRDLI | Card List BMS Screen | BMS map for card listing | SCREEN
+COCRDSL | Card Select BMS Screen | BMS map for card details selection | SCREEN
+COCRDUP | Card Update BMS Screen | BMS map for card update | SCREEN
+
+CICS ONLINE PROGRAMS - TRANSACTION OPERATIONS (4 programs)
+================================================================================
+COTRN00C | Transaction List Online | CICS program for listing transactions with pagination | CICS
+COTRN01C | Transaction View Online | CICS program for viewing single transaction | CICS
+COTRN02C | Transaction Add Online | CICS program for adding new transactions | CICS
+COTRN00 | Transaction List BMS Screen | BMS map for transaction listing | SCREEN
+COTRN01 | Transaction View BMS Screen | BMS map for transaction details | SCREEN
+COTRN02 | Transaction Add BMS Screen | BMS map for transaction entry | SCREEN
+
+CICS ONLINE PROGRAMS - USER MANAGEMENT (4 programs)
+================================================================================
+COUSR00C | User List Online | CICS program for listing users with pagination | CICS
+COUSR01C | User Add Online | CICS program for adding new users | CICS
+COUSR02C | User Update Online | CICS program for updating user records | CICS
+COUSR03C | User Delete Online | CICS program for deleting users | CICS
+COUSR00 | User List BMS Screen | BMS map for user listing | SCREEN
+COUSR01 | User Add BMS Screen | BMS map for user entry | SCREEN
+COUSR02 | User Update BMS Screen | BMS map for user update | SCREEN
+COUSR03 | User Delete BMS Screen | BMS map for user deletion | SCREEN
+
+UTILITY PROGRAMS (2 programs)
+================================================================================
+CSUTLDTC | Date Validation Utility | CICS utility for date validation using CEEDAYS | UTILITY
+CORPT00C | Report Submission Online | CICS program for submitting batch reports to job queue | CICS
+CORPT00 | Report Submission BMS Screen | BMS map for report submission | SCREEN
+
+MENU AND TITLE SCREENS (3 programs)
+================================================================================
+COADM02Y | Admin Menu Data | Layout for admin menu screen | SCREEN
+COADM01 | Admin Menu BMS Screen | BMS map for admin menu | SCREEN
+COMEN02Y | User Menu Data | Layout for user menu screen | SCREEN
+COMEN01 | User Menu BMS Screen | BMS map for user menu | SCREEN
+COSGN00 | Signon BMS Screen | BMS map for signon screen | SCREEN
+
+================================================================================
+SUMMARY
+================================================================================
+Total BATCH Programs: 9
+Total CICS Online Programs: 13
+Total CICS Menu/Utility Programs: 3
+Total Screen/Data Programs: 15+ (BMS maps and screen layouts)
+Total Programs in Codebase: 29
+
+Application Type: Credit Card Management System (CardDemo)
+Primary Processing: Daily batch for interest calculation and transaction posting
+Online Component: CICS-based inquiry and update screens for accounts, cards, transactions, users
+================================================================================
