@@ -91,6 +91,16 @@ The transaction description on that same row is `"Return item at Nitzsche, Lockm
 
 `acctdata.txt` (50 account records) contains **zero negative-balance characters**. Every account has a non-negative current and cycle balance. The negative-overpunch decoder is therefore exercised only by `dailytran.txt`. When porting CBACT01C or CBACT04C (which read account balances), the negative path must be exercised with synthetic fixtures or it will be a silent gap in the test suite.
 
+## ASCII fixture inconsistency — cardxref.txt strips trailing FILLER
+
+For every file pair in `app/data/`, the EBCDIC file is a fixed-record dataset (no line terminators), and the ASCII file is the same records with CRLF appended per record. The record length matches the copybook's declared length.
+
+**Exception:** `app/data/ASCII/cardxref.txt`. The copybook `CVACT03Y.cpy` declares the record as 50 bytes (16 + 9 + 11 + 14-byte FILLER), and the EBCDIC file `AWS.M2.CARDDEMO.CARDXREF.PS` carries 50 bytes × 50 records = 2,500 bytes. But the ASCII file is only 1,900 bytes — 38 bytes per record = 36 data bytes + CRLF, with the trailing 14-byte FILLER stripped.
+
+This is a fixture-only inconsistency, not an encoding rule. The COBOL programs that read XREFFILE always read the full 50-byte record from VSAM, and that path is unaffected. But a Java codec that reads the ASCII fixture for tests must handle the case where the trailing FILLER is missing — either by padding to the declared record length on read, or by configuring the reader to know that this specific fixture is short.
+
+The pilot harness for CBACT03C will pad on read to recover the canonical 50-byte record before passing it to the codec.
+
 ## How the codec must work
 
 A zoned-decimal decoder takes:

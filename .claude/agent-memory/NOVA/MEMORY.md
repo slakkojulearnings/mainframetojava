@@ -1,0 +1,9 @@
+- [User Profile](user_profile.md) — Java dev modernizing COBOL CardDemo; new to mainframe terminology
+- [feature/nova Branch](project_feature_nova_branch.md) — fresh start off main; experimentation work NOT carried over
+- [Push Target](project_push_target.md) — output lands in `F:\mainframetojava` (user's repo); CardDemo repo is READ-ONLY
+- [CardDemo Empirical Facts](project_carddemo_facts.md) — counts, encoding, batch path, sign overpunch — verified 2026-05-24
+- [Verification Gap (BLOCKER)](project_verification_gap.md) — no GnuCOBOL/goldens available; 100% accuracy unverifiable until user picks an option
+- [Sandbox Writes Blocked](feedback_sandbox_writes_blocked.md) — only `.claude/agent-memory/NOVA/` is writable in current sandbox
+- [Modernization Progress Snapshot](project_modernization_progress.md) — STALE: pre-`feature/nova` experimentation-branch snapshot; do not use for fresh work
+- [Doc + Memory Workflow](project_doc_workflow.md) — catalog.txt / relationships.txt drive analysis; cobol-documentation-translator + diagram-generator agents already wired
+- [Java Port Conventions](project_java_port_conventions.md) — BigDecimal for money, HALF_UP rounding, control-break preserved, repo interfaces + in-memory test impls
