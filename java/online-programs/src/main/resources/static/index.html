@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>CardDemo - Credit Card Management</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <div id="app">
+        <!-- Login Screen -->
+        <div id="loginScreen" class="screen active">
+            <div class="container">
+                <h1>CardDemo</h1>
+                <h2>Sign In</h2>
+                <form id="signinForm">
+                    <div class="form-group">
+                        <label for="userId">User ID:</label>
+                        <input type="text" id="userId" name="userId" required>
+                    </div>
+                    <div class="form-group">
+                        <label for="password">Password:</label>
+                        <input type="password" id="password" name="password" required>
+                    </div>
+                    <button type="submit" class="btn-primary">Sign In</button>
+                    <div id="errorMsg" class="error"></div>
+                </form>
+            </div>
+        </div>
+
+        <!-- Menu Screen -->
+        <div id="menuScreen" class="screen">
+            <div class="container">
+                <div class="header">
+                    <h1>CardDemo Menu</h1>
+                    <button id="signoutBtn" class="btn-secondary">Sign Out</button>
+                </div>
+                <div id="menuOptions" class="menu-grid"></div>
+            </div>
+        </div>
+
+        <!-- Account View Screen -->
+        <div id="accountScreen" class="screen">
+            <div class="container">
+                <div class="header">
+                    <button id="backBtn" class="btn-secondary">Back to Menu</button>
+                </div>
+                <div id="accountDetails" class="details-grid"></div>
+            </div>
+        </div>
+
+        <!-- Card List Screen -->
+        <div id="cardListScreen" class="screen">
+            <div class="container">
+                <div class="header">
+                    <button id="backBtn2" class="btn-secondary">Back to Menu</button>
+                </div>
+                <div id="cardList" class="card-table"></div>
+            </div>
+        </div>
+
+        <!-- Transaction List Screen -->
+        <div id="tranListScreen" class="screen">
+            <div class="container">
+                <div class="header">
+                    <button id="backBtn3" class="btn-secondary">Back to Menu</button>
+                </div>
+                <div id="tranList" class="transaction-table"></div>
+            </div>
+        </div>
+    </div>
+
+    <script src="app.js"></script>
+</body>
+</html>
